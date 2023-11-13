@@ -28,7 +28,6 @@
                 <h2>Painting 1</h2>
                 <p class="description">A beautiful painting.</p>
                 <p class="price">$100</p>
-                <p class="location">Location: Somewhere</p>
                 <button class="purchase-button">Purchase</button>
             </div>
         </div>
@@ -39,7 +38,36 @@
                 <h2>Painting 2</h2>
                 <p class="description">Another beautiful painting.</p>
                 <p class="price">$120</p>
-                <p class="location">Location: Elsewhere</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+        </div>
+
+        <div class="artwork">
+            <img src="painting3.jpg" alt="Painting 3">
+            <div class="info">
+                <h2>Painting 3</h2>
+                <p class="description">Yet another beautiful painting.</p>
+                <p class="price">$150</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+        </div>
+
+        <div class="artwork">
+            <img src="painting4.jpg" alt="Painting 4">
+            <div class="info">
+                <h2>Painting 4</h2>
+                <p class="description">One more beautiful painting.</p>
+                <p class="price">$180</p>
+                <button class="purchase-button">Purchase</button>
+            </div>
+        </div>
+
+        <div class="artwork">
+            <img src="painting5.jpg" alt="Painting 5">
+            <div class="info">
+                <h2>Painting 5</h2>
+                <p class="description">The last beautiful painting.</p>
+                <p class="price">$200</p>
                 <button class="purchase-button">Purchase</button>
             </div>
         </div>
@@ -51,26 +79,6 @@
     <footer>
         <p>&copy; 2023 Pinturas Gallery</p>
     </footer>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const artworks = document.querySelectorAll('.artwork');
-
-        artworks.forEach(function (artwork) {
-            artwork.addEventListener('click', function () {
-                // Toggle the "expanded" class on the clicked artwork
-                artwork.classList.toggle('expanded');
-
-                // Dynamically adjust the height of the main.gallery section
-                const gallery = document.querySelector('.gallery');
-                const numColumns = getComputedStyle(gallery).gridTemplateColumns.split(' ').length;
-                const numRows = Math.ceil(artworks.length / numColumns);
-
-                gallery.style.height = gallery.classList.contains('expanded') ? `${numRows * 300}px` : null;
-            });
-        });
-    });
-</script>
 
 </body>
 </html>
