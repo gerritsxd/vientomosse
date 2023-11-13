@@ -168,3 +168,42 @@ main.gallery {
 }
 
 }
+body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            filter: blur(5px); /* Adjust the blur effect as needed */
+            transition: filter 0.5s ease; /* Add a smooth transition for the blur effect */
+        }
+
+        .contact-box {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        a {
+            color: #333; /* Dark color for links */
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }

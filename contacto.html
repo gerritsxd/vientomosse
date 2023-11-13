@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to contacto.html can be added here if needed */
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Your Website Name</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="VientoMosse.html">Home</a></li>
+            <li><a href="contacto.html">Contact</a></li>
+            <li><a href="pinturas.html">Pinturas</a></li>
+        </ul>
+    </nav>
+
+    <div id="background" class="background"></div>
+
+    <div class="contact-box">
+        <h2>Contact Information</h2>
+        <p>Feel free to reach out to us through the following channels:</p>
+        
+        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+        <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+        <a href="mailto:info@example.com">Email</a>
+        <a href="tel:+123456789">Phone Number</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Contact Page</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var background = document.getElementById("background");
+            var images = [
+                "paintings/painting1.jpg",
+                "paintings/painting2.jpg",
+                "paintings/painting3.jpg",
+                "paintings/painting4.jpg",
+                "paintings/painting5.jpg"
+            ]; // Add your image filenames here
+            var currentImageIndex = 0;
+
+            function changeBackground() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                var nextImage = images[currentImageIndex];
+                background.style.filter = "blur(10px)"; // Adjust the blur effect for the transition
+                background.style.backgroundImage = "url('" + nextImage + "')";
+                setTimeout(function() {
+                    background.style.filter = "blur(5px)"; // Adjust the blur effect after the transition
+                }, 500); // Adjust the transition duration (in milliseconds)
+            }
+
+            changeBackground(); // Initial background change
+
+            // Change background every 10 seconds (adjust the interval as needed)
+            setInterval(changeBackground, 10000);
+        });
+    </script>
+
+</body>
+</html>
