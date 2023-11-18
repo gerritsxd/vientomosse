@@ -1,7 +1,13 @@
+/* General styling for the website */
+
 body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    height: 100%;
+}
+body.pinturas-page {
+    padding-bottom: 120px; /* Add empty space at the bottom for the pinturas.html page */
 }
 
 header {
@@ -15,7 +21,7 @@ header {
 nav {
     background-color: #333;
     color: #fff;
-    padding: 1.5em; /* Adjusted padding for a slightly thicker background */
+    padding: 1.5em;
     text-align: left;
     position: fixed;
     top: 0;
@@ -54,9 +60,9 @@ nav a:hover {
     background-color: #555;
 }
 
-main {
-    margin: 80px 0 0 0;
-    padding: 20px;
+.main-content {
+    margin: 80px 20px 100px 20px; /* Increased margin-bottom */
+    box-sizing: border-box;
 }
 
 #map-container {
@@ -79,7 +85,11 @@ iframe {
     justify-content: space-around;
     box-sizing: border-box;
 }
-
+main.gallery {
+    flex-grow: 1;
+    padding-bottom: 120px; /* Adjust the value based on your design */
+    margin-bottom: -120px; /* Negative margin to pull the footer up */
+}
 .artwork {
     width: calc(50% - 20px);
     margin: 20px 0;
@@ -107,6 +117,43 @@ h2 {
     color: #009688;
 }
 
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 80%;
+}
+
+.contact-box h2 {
+    color: #333;
+}
+
+.contact-box p {
+    color: #555;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    font-size: 24px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
 footer {
     background-color: #333;
     color: #fff;
@@ -117,93 +164,22 @@ footer {
     left: 0;
     width: 100%;
     z-index: 2;
+    padding-bottom: 20px; /* Added padding-bottom to create space for the footer */
 }
 
 @media (min-width: 768px) {
     .artwork {
         width: calc(33.33% - 20px);
     }
-}
 
-@media (max-width: 767px) {
-    header,
-    nav,
-    footer {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    nav h1 {
-        font-size: 20px;
-    }
-}
-/* styles.css */
-
-/* styles.css */
-
-/* ... Your existing CSS ... */
-
-main.gallery {
-    transition: height 0.3s; /* Add a smooth transition for height changes */
-}
-
-.artwork.expanded {
-    transform: scale(1.2);
-    z-index: 1; /* Ensure the expanded artwork is above other elements */
-}
-
-.artwork.expanded .info {
-    opacity: 1;
-}
-
-.artwork.expanded .purchase-button {
-    display: block;
-    opacity: 1;
-}
-
-@media (max-width: 767px) {
-    main.gallery.expanded {
-        overflow-y: auto; /* Enable vertical scrolling when the gallery is expanded on smaller screens */
+    .contact-box {
+        width: 50%;
     }
 }
 
+@media (max-width: 480px) {
+    .main-content {
+        margin-top: 60px;
+        margin-bottom: 20px; /* Added margin-bottom for smaller screens */
+    }
 }
-body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            height: 100vh;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            object-fit: cover;
-            filter: blur(5px); /* Adjust the blur effect as needed */
-            transition: filter 0.5s ease; /* Add a smooth transition for the blur effect */
-        }
-
-        .contact-box {
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
-        a {
-            color: #333; /* Dark color for links */
-            text-decoration: none;
-            display: block;
-            margin: 10px 0;
-        }

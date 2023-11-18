@@ -6,8 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pinturas Gallery</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        nav a.current {
+            background-color: #555; /* Change the background color to highlight the current page */
+        }
+		
+    </style>
 </head>
-<body>
+<body class="pinturas-page">
 
     <header>
 
@@ -17,7 +23,7 @@
         <ul>
             <li><a href="VientoMosse.html">Home</a></li>
             <li><a href="contacto.html">Contact</a></li>
-            <li><a href="#">Pinturas</a></li>
+            <li><a href="pinturas.html" class="current">Pinturas</a></li>
         </ul>
     </nav>
 
@@ -71,11 +77,24 @@
                 <button class="purchase-button">Purchase</button>
             </div>
         </div>
-
+		
         <!-- Add more painting blocks as needed -->
-
+		
     </main>
-
+	
+	<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var currentPage = location.pathname.split("/").pop();
+            var links = document.querySelectorAll("nav a");
+            
+            links.forEach(function(link) {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("current");
+                }
+            });
+        });
+    </script>
+	
     <footer>
         <p>&copy; 2023 Pinturas Gallery</p>
     </footer>
