@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Painting</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="purchase-body">
+	
+
+    <nav>
+        <ul>
+            <li><a href="VientoMosse.html" class="current">Home</a></li>
+            <li><a href="contacto.html">Contact</a></li>
+            <li><a href="pinturas.html">Pinturas</a></li>
+        </ul
+    </nav>
+
+    <main class="purchase-page">
+	<div class="purchase-background">
+        <div class="painting-container">
+            <img src="path_to_large_painting_image.jpg" alt="Large Painting" class="zoomable">
+        </div>
+        <div class="purchase-info">
+            <div class="info">
+                <p>Price: $1000</p>
+                <p>Size: 140x100</p>
+                <p>Location: 52°21'59.8"N 4°53'03.2"E</p>
+                <!-- More info as needed -->
+            </div>
+            <div class="payment-options">
+                <p>Payment Options:</p>
+                <ul>
+                    <li>PayPal</li>
+                    <li>Credit/Debit Card</li>
+                    <!-- More options as needed -->
+                </ul>
+            </div>
+        </div>
+        <div class="shipping-info">
+            <button id="shipping-info-btn">About the Shipping Process</button>
+            <p id="shipping-details" style="display: none;">
+                Detailed information about the shipping process...
+            </p>
+        </div>
+	</div>
+    </main>
+
+    <script src="js/purchase_script.js"></script>
+</body>
+</html>
