@@ -203,6 +203,18 @@ h2 {
     text-align: center;
 }
 
+body.purchase-body nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto; /* or a fixed height that matches the content */
+    z-index: 1000; /* to ensure it is on top */
+}
+
+
+
 .lens {
     position: absolute;
     border: 3px solid #000;
@@ -560,6 +572,71 @@ footer {
     padding-bottom: 20px; /* Added padding-bottom to create space for the footer */
 }
 
+/* Specific styles for biography page 
+
+.biography-page {
+    background-color: #f0f0f0; /* Set a light background color for the biography page */
+    padding-top: 60px; /* Space for fixed navbar */
+    padding-bottom: 120px; /* Space for fixed footer */
+}
+
+.biography-page main {
+    max-width: 800px; /* Maximum width of the content */
+    margin: 0 auto; /* Center the main content */
+    padding: 20px;
+    background: #fff; /* White background for the content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+.biography-page .newspaper-style {
+    column-count: 2; /* Create two columns for the text */
+    column-gap: 40px; /* Space between the columns */
+    text-align: justify;
+}
+
+.biography-page .newspaper-style h1 {
+    column-span: all; /* Title spans all columns */
+    font-family: 'Times New Roman', serif; /* Serif font for a newspaper look */
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.biography-page .bio-image {
+    width: 100%;
+    max-width: 100%; /* Full column width */
+    height: auto;
+    margin: 20px 0; /* Space above and below the image */
+    display: block; /* Ensure images are block level for margin to work */
+}
+
+.biography-page .bio-image.full-span {
+    column-span: all; /* Images can span all columns */
+}
+.biography-page main {
+    /* ... [Other styles] ... */
+    padding-bottom: 120px; /* Adjust this value as needed to provide space above the footer */
+}
+/* Other styles remain the same as previously defined */
+
+
+
+
+
+@media only screen and (max-width: 576px) {
+    /* Smaller devices */
+    nav ul {
+        display: block;
+    }
+    nav li {
+        margin: 10px 0;
+    }
+    nav a {
+        display: block;
+        text-align: center;
+    }
+
+
+
 @media (min-width: 768px) {
     .artwork {
         flex-basis: calc(50% - 20px); /* On smaller screens, each item takes up half the container width */
@@ -570,7 +647,24 @@ footer {
     }
 	.purchase-info {
         flex-direction: column;
+	}
+	.biography-page .newspaper-style {
+        column-count: 1; /* Switch to a single column layout on smaller screens */
+    }
 	
+}
+
+@media only screen and (max-width: 576px) {
+    /* Smaller mobile devices */
+    nav ul {
+        display: block; /* Stack nav items vertically */
+    }
+
+    nav li {
+        margin: 10px 0; /* Add margin to each nav item */
+    }
+
+
 }
 
 @media (max-width: 480px) {
@@ -580,6 +674,18 @@ footer {
     .main-content {
         margin-top: 60px;
         margin-bottom: 20px; /* Added margin-bottom for smaller screens */
+    }
+	.biography-page .bio-image {
+        max-width: 100%; /* Full width images on small screens */
+    }
+    
+    .biography-page .newspaper-style h1 {
+        font-size: 2rem; /* Smaller font size for h1 on very small screens */
+    }
+    
+    /* Adjust padding and layout for very small screens */
+    .biography-page main {
+        padding: 15px;
     }
 
 }
