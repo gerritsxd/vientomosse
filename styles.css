@@ -12,22 +12,35 @@ body.pinturas-page {
 
 header {
     background-color: #333;
-    color: #fff;
+    color: #yellow;
     padding: 1em;
     text-align: center;
     z-index: 2;
 }
-
+nav h1, nav ul, nav li, nav a {
+    padding: 20px; /* Remove padding */
+    margin: 0; /* Remove margin to minimize the height */
+    /* Other styles... */
+}
+nav h1 {
+    font-size: 20px; /* Smaller font size for the title if necessary */
+    /* Other styles... */
+}
+nav a {
+    padding:  10px; /* Adjust padding for nav links if necessary */
+    /* Other styles... */
+}
 nav {
-    background-color: #333;
+    background-color: #007bff; /* Bright blue color */
     color: #fff;
-    padding: 1.5em;
+    padding: 4px; /* Reduced padding */
     text-align: left;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 4;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
 }
 
 nav h1 {
@@ -57,7 +70,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #555;
+    background-color: #007bff;
 }
 
 
@@ -78,7 +91,7 @@ nav a:hover {
     top: 0;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 60px);
 }
 
 iframe {
@@ -280,16 +293,16 @@ body.purchase-body nav {
 }
 
 footer {
-    background-color: #333;
+    background-color: #0056b3; /* Dark blue color */
     color: #fff;
     text-align: center;
-    padding: 1em;
+    padding: 0px;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 2;
-    padding-bottom: 20px; /* Added padding-bottom to create space for the footer */
+    
 }
 
 @media (min-width: 768px) {
@@ -319,7 +332,10 @@ footer {
 
 }
 /* General styling for the website */
-
+.your-element-class {
+    /* Other styles... */
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
+}
 body, html {
     margin: 0;
     padding: 0;
@@ -339,15 +355,16 @@ header {
 }
 
 nav {
-    background-color: #333;
+    background-color: #007bff; /* Bright blue color */
     color: #fff;
-    padding: 1.5em;
+    padding: 4px; /* Reduced padding */
     text-align: left;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 4;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
 }
 
 nav h1 {
@@ -372,7 +389,7 @@ nav a {
     text-decoration: none;
     color: #fff;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 0px;
     transition: background-color 0.3s;
 }
 
@@ -398,7 +415,7 @@ nav a:hover {
     top: 0;
     left: 0;
     width: 100vw;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 50px);
 }
 
 iframe {
@@ -423,6 +440,7 @@ main.gallery {
     flex-basis: calc(33% - 20px); /* Each item takes up a third of the container width, minus margins */
     margin: 10px; /* Space around each item */
     box-sizing: border-box;
+	color: white;
 }
 
 .artwork img {
@@ -560,16 +578,18 @@ h2 {
 }
 
 footer {
-    background-color: #333;
+    background-color: #0056b3;
     color: #fff;
     text-align: center;
-    padding: 1em;
+    padding: 0px;
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     z-index: 2;
-    padding-bottom: 20px; /* Added padding-bottom to create space for the footer */
+    padding-bottom: 0px; /* Added padding-bottom to create space for the footer */
+    box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.6); /* Negative vertical offset for shadow above the footer */
+
 }
 
 /* Specific styles for biography page 

@@ -7,10 +7,26 @@
     <title>Pinturas Gallery</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        nav a.current {
-            background-color: #555; /* Change the background color to highlight the current page */
+        body {
+            background-image: url('images/fondo_pinturas.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+			position: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
-		
+		body::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.8); /* semi-transparent black overlay */
+		z-index: -1; /* Ensures overlay is behind the content */
+		}
     </style>
 </head>
 <body class="pinturas-page">
