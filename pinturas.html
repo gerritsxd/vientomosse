@@ -8,25 +8,32 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-image: url('images/fondo_pinturas.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-			position: fixed;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
+		background-image: url('images/fondo_pinturas.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed; /* Fixes the background image */
+		margin: 0;
+		padding: 0;
+		font-family: Arial, sans-serif;
+		overflow: auto; /* Enables scrolling */
+	}
+
 		body::before {
 		content: '';
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
 		background: rgba(0, 0, 0, 0.8); /* semi-transparent black overlay */
 		z-index: -1; /* Ensures overlay is behind the content */
-		}
+	}
+
+	.main-content-wrapper {
+		position: relative; /* Makes the content scrollable */
+		z-index: 2; /* Ensures content is above the background */
+	}
     </style>
 </head>
 <body class="pinturas-page">

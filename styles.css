@@ -27,8 +27,8 @@ nav h1 {
     /* Other styles... */
 }
 nav a {
-    padding:  10px; /* Adjust padding for nav links if necessary */
-    /* Other styles... */
+    padding: 10px 8px; /* Slightly reduce padding */
+    font-size: 16px; /* Adjust font-size if needed */
 }
 nav {
     background-color: #007bff; /* Bright blue color */
@@ -643,17 +643,21 @@ footer {
 
 
 @media only screen and (max-width: 576px) {
-    /* Smaller devices */
-    nav ul {
-        display: block;
-    }
-    nav li {
-        margin: 10px 0;
-    }
     nav a {
-        display: block;
-        text-align: center;
+        padding: 10px 4px; /* Further reduce horizontal padding for small screens */
+        font-size: 14px; /* Optionally reduce font-size for small screens */
     }
+
+    nav ul {
+        padding-left: 0; /* Ensure no padding is pushing the list items out */
+        padding-right: 0;
+    }
+
+    nav li {
+        margin-right: 4px; /* Reduce margin between list items if necessary */
+        margin-left: 4px;
+    }
+}
 
 
 
