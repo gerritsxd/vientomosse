@@ -612,6 +612,7 @@ footer {
     column-count: 2; /* Create two columns for the text */
     column-gap: 40px; /* Space between the columns */
     text-align: justify;
+	padding-bottom: 55px;
 }
 
 .biography-page .newspaper-style h1 {
