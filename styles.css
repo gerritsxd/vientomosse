@@ -9,27 +9,42 @@ body, html {
 body.pinturas-page {
     padding-bottom: 120px; /* Add empty space at the bottom for the pinturas.html page */
 }
-
+@keyframes static-flicker {
+    0% { background-position: 0 0; }
+    10% { background-position: -5% -10%; }
+    20% { background-position: 5% 10%; }
+    30% { background-position: -10% 5%; }
+    40% { background-position: 10% -5%; }
+    50% { background-position: 0 0; }
+    60% { background-position: -5% 10%; }
+    70% { background-position: 5% -10%; }
+    80% { background-position: 10% 5%; }
+    90% { background-position: -10% -5%; }
+    100% { background-position: 0 0; }
+}
 body #loading-phrase {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url('path_to_your_static_image.jpg'); /* Replace with your static image */
+    background-size: cover;
+    animation: static-flicker 1s infinite linear;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Increased z-index */
-    opacity: 1; /* Initial opacity */
-    transition: opacity 2s ease-in-out; /* Ensured transition */
+    z-index: 1000;
+    opacity: 0.8; /* Adjust for desired opacity */
 }
+
 
 body #loading-phrase span {
     color: white;
     font-size: 2rem;
     text-align: center;
 }
+
 
 #video-container {
     position: fixed;
