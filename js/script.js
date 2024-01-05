@@ -1,34 +1,43 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('filter-btn').addEventListener('click', function() {
-        var filterMenu = document.getElementById('filter-menu');
-        filterMenu.style.display = filterMenu.style.display === 'block' ? 'none' : 'block';
-    });
+    // Highlight the current page in the navigation bar
+    const currentLocation = location.href;
+    const menuItem = document.querySelectorAll('a');
+    const menuLength = menuItem.length;
+    for (let i = 0; i < menuLength; i++) {
+        if (menuItem[i].href === currentLocation) {
+            menuItem[i].className = "active";
+        }
+    }
 
-    document.getElementById('apply-filter').addEventListener('click', function() {
-        var city = document.getElementById('city-select').value;
-        var size = document.getElementById('size-select').value;
-        var price = document.getElementById('price-range').value;
+    // Function to resize images based on screen width
+    function resizeImages() {
+        const screenWidth = window.innerWidth;
 
-        // Implement the filter logic here
-        // You will need to iterate over your gallery items and show/hide them based on the selected filters
-    });
+        document.querySelectorAll('.artwork img').forEach(img => {
+            if (screenWidth <= 600) { // Assuming 600px as breakpoint for smartphones
+                img.style.maxWidth = '100%'; // Limit image width to 100% of its container
+                img.style.height = 'auto'; // Maintain aspect ratio
+            } else {
+                // For larger screens, adjust size as needed
+                img.style.maxWidth = ''; // Reset to default
+                img.style.height = ''; // Reset to default
+            }
+        });
+    };
 
-    document.getElementById('price-range').addEventListener('input', function() {
-        var price = document.getElementById('price-range').value;
-        document.getElementById('price-value').textContent = `$0 - $${price}`;
-    });
-	document.querySelectorAll('.purchase-button').forEach(button => {
-    button.addEventListener('click', function() {
-        var imageUrl = encodeURIComponent(this.getAttribute('data-image'));
-        var title = encodeURIComponent(this.getAttribute('data-title'));
-        var description = encodeURIComponent(this.getAttribute('data-description'));
-        var price = encodeURIComponent(this.getAttribute('data-price'));
-        var size = encodeURIComponent(this.getAttribute('data-size'));
+    resizeImages(); // Call immediately on load
+    window.addEventListener('resize', resizeImages); // Call on window resize
 
-        var queryString = `?image=${imageUrl}&title=${title}&description=${description}&price=${price}&size=${size}`;
-        window.location.href = 'purchase.html' + queryString;
+    // Filter paintings based on city, size, and price
+    const filters = document.querySelectorAll('.filter');
+    filters.forEach(filter => {
+        filter.addEventListener('click', function() {
+            document.querySelectorAll('.artwork').forEach(artwork => {
+                artwork.style.display = 'none';
+                if (artwork.getAttribute('data-city') === this.getAttribute('data-city')) {
+                    artwork.style.display = 'block';
+                }
+            });
+        });
     });
 });
-
-});
-

@@ -10,6 +10,58 @@ body.pinturas-page {
     padding-bottom: 120px; /* Add empty space at the bottom for the pinturas.html page */
 }
 
+body #loading-phrase {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Increased z-index */
+    opacity: 1; /* Initial opacity */
+    transition: opacity 2s ease-in-out; /* Ensured transition */
+}
+
+body #loading-phrase span {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background-color: black;
+    z-index: 1001; /* Ensure it's above other elements */
+    overflow: hidden;
+}
+
+#intro-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area of the container */
+}
+
+
+/* General styling for the website */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+body.pinturas-page {
+    padding-bottom: 120px; /* Add empty space at the bottom for the pinturas.html page */
+}
+
 header {
     background-color: #333;
     color: #yellow;
@@ -85,6 +137,7 @@ nav a:hover {
     margin: 80px 20px 100px 20px; /* Increased margin-bottom */
     box-sizing: border-box;
 }
+
 
 #map-container {
     position: absolute;
@@ -305,18 +358,6 @@ footer {
     
 }
 
-@media (min-width: 768px) {
-    .artwork {
-        flex-basis: calc(50% - 20px); /* On smaller screens, each item takes up half the container width */
-    }
-
-    .contact-box {
-        width: 50%;
-    }
-	.purchase-info {
-        flex-direction: column;
-	
-}
 
 @media (max-width: 480px) {
     .artwork {
@@ -660,11 +701,723 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    .artwork {
+        flex-basis: 100%; /* 1 image per row */
+    }
+}
+
+@media (min-width: 768px) {
+    .artwork {
+        flex-basis: calc(50% - 20px); /* 2 images per row */
+    }
+
+    .contact-box {
+        width: 50%;
+    }
+	.purchase-info {
+        flex-direction: column;
+	}
+	.biography-page .newspaper-style {
+        column-count: 1; /* Switch to a single column layout on smaller screens */
+    }
+	
+}
+
+@media only screen and (max-width: 576px) {
+    /* Smaller mobile devices */
+    nav ul {
+        display: block; /* Stack nav items vertically */
+    }
+
+    nav li {
+        margin: 10px 0; /* Add margin to each nav item */
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .artwork {
+        flex-basis: 100%; /* On very small screens, each item takes up the full container width */
+    }
+	.artwork img {
+        max-width: 100%; /* Ensure images don't exceed container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .main-content {
+        margin-top: 60px;
+        margin-bottom: 20px; /* Added margin-bottom for smaller screens */
+    }
+	.biography-page .bio-image {
+        max-width: 100%; /* Full width images on small screens */
+    }
+    
+    .biography-page .newspaper-style h1 {
+        font-size: 2rem; /* Smaller font size for h1 on very small screens */
+    }
+    
+    /* Adjust padding and layout for very small screens */
+    .biography-page main {
+        padding: 15px;
+    }
+
+}
+
+
+
+header {
+    background-color: #333;
+    color: #yellow;
+    padding: 1em;
+    text-align: center;
+    z-index: 2;
+}
+nav h1, nav ul, nav li, nav a {
+    padding: 20px; /* Remove padding */
+    margin: 0; /* Remove margin to minimize the height */
+    /* Other styles... */
+}
+nav h1 {
+    font-size: 20px; /* Smaller font size for the title if necessary */
+    /* Other styles... */
+}
+nav a {
+    padding: 10px 8px; /* Slightly reduce padding */
+    font-size: 16px; /* Adjust font-size if needed */
+}
+nav {
+    background-color: #007bff; /* Bright blue color */
+    color: #fff;
+    padding: 4px; /* Reduced padding */
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 24px;
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #007bff;
+}
+
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+    margin-top: 20px;
+}
+
+.main-content {
+    margin: 80px 20px 100px 20px; /* Increased margin-bottom */
+    box-sizing: border-box;
+}
+
+#map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 60px);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+main.gallery {
+	margin-top: 80px; /* Adjust as needed */
+    flex-grow: 1;
+    padding-bottom: 120px; /* Adjust the value based on your design */
+    margin-bottom: -120px; /* Negative margin to pull the footer up */
+}
+.artwork {
+    flex-basis: calc(33% - 20px); /* Each item takes up a third of the container width, minus margins */
+    margin: 10px; /* Space around each item */
+    box-sizing: border-box;
+}
+
+.artwork img {
+    width: 100%;
+    height: auto;
+}
+
+/* Add these new styles */
+.filter-section {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 3; /* Higher than the navigation bar */
+    position: relative;
+}
+
+.filter-menu {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.filter-menu h3 {
+    margin-top: 0;
+}
+
+.filter-menu div {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+.info {
+    padding: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #009688;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 80%;
+}
+
+.contact-box h2 {
+    color: #333;
+}
+
+.contact-box p {
+    color: #555;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    font-size: 24px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.purchase-page {
+    padding: 20px;
+    text-align: center;
+}
+
+body.purchase-body nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto; /* or a fixed height that matches the content */
+    z-index: 1000; /* to ensure it is on top */
+}
+
+
+
+.lens {
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: none;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    visibility: hidden;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+.purchase-background {
+    background-color: white;
+
+}
+.painting-container {
+    position: relative;
+}
+
+.purchase-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.purchase-body {
+    background-color: #red; /* Example color */
+}
+
+
+.info, .payment-options {
+    margin: 0 10px;
+}
+
+.shipping-info button {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.purchase-page {
+    padding: 20px;
+    text-align: center;
+}
+
+.painting-container img.zoomable {
+    max-width: 100%;
+    max-height: 80vh; /* Limit the image height */
+    margin: 10px auto; /* Center the image */
+    transition: transform 0.25s ease;
+    cursor: zoom-in;
+}
+
+.purchase-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.info, .payment-options {
+    margin: 0 10px;
+}
+
+footer {
+    background-color: #0056b3; /* Dark blue color */
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    
+}
+
+
+
+@media (max-width: 480px) {
+    .artwork {
+        flex-basis: 100%; /* On very small screens, each item takes up the full container width */
+    }
+    .main-content {
+        margin-top: 60px;
+        margin-bottom: 20px; /* Added margin-bottom for smaller screens */
+    }
+	.painting-container img.zoomable {
+        max-height: 60vh;
+    }
+
+}
+/* General styling for the website */
+.your-element-class {
+    /* Other styles... */
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+body.pinturas-page {
+    padding-bottom: 120px; /* Add empty space at the bottom for the pinturas.html page */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    z-index: 2;
+}
+
+nav {
+    background-color: #007bff; /* Bright blue color */
+    color: #fff;
+    padding: 4px; /* Reduced padding */
+    text-align: left;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.6);
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 24px;
+    display: inline-block;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 0px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+    margin-top: 20px;
+}
+
+.main-content {
+    margin: 80px 20px 100px 20px; /* Increased margin-bottom */
+    box-sizing: border-box;
+}
+
+#map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 50px);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+main.gallery {
+	margin-top: 80px; /* Adjust as needed */
+    flex-grow: 1;
+    padding-bottom: 120px; /* Adjust the value based on your design */
+    margin-bottom: -120px; /* Negative margin to pull the footer up */
+}
+.artwork {
+    flex-basis: calc(33% - 20px); /* Each item takes up a third of the container width, minus margins */
+    margin: 10px; /* Space around each item */
+    box-sizing: border-box;
+	color: white;
+}
+
+.artwork img {
+    width: 100%;
+    height: auto;
+}
+
+/* Add these new styles */
+.filter-section {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 3; /* Higher than the navigation bar */
+    position: relative;
+}
+
+.filter-menu {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.filter-menu h3 {
+    margin-top: 0;
+}
+
+.filter-menu div {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+.info {
+    padding: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.price {
+    font-weight: bold;
+    color: #009688;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 80%;
+}
+
+.contact-box h2 {
+    color: #333;
+}
+
+.contact-box p {
+    color: #555;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.contact-icon {
+    font-size: 24px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.purchase-page {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.purchase-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.info, .payment-options {
+    margin: 0 10px;
+}
+
+.shipping-info button {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.purchase-page {
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.purchase-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.info, .payment-options {
+    margin: 0 10px;
+}
+
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    padding-bottom: 0px; /* Added padding-bottom to create space for the footer */
+    box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.6); /* Negative vertical offset for shadow above the footer */
+
+}
+
+/* Specific styles for biography page 
+
+.biography-page {
+    background-color: #f0f0f0; /* Set a light background color for the biography page */
+    padding-top: 60px; /* Space for fixed navbar */
+    padding-bottom: 120px; /* Space for fixed footer */
+}
+
+.biography-page main {
+    max-width: 800px; /* Maximum width of the content */
+    margin: 0 auto; /* Center the main content */
+    padding: 20px;
+    background: #fff; /* White background for the content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+.biography-page .newspaper-style {
+    column-count: 2; /* Create two columns for the text */
+    column-gap: 40px; /* Space between the columns */
+    text-align: justify;
+	padding-bottom: 55px;
+}
+
+.biography-page .newspaper-style h1 {
+    column-span: all; /* Title spans all columns */
+    font-family: 'Times New Roman', serif; /* Serif font for a newspaper look */
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+.biography-page .bio-image {
+    width: 100%;
+    max-width: 100%; /* Full column width */
+    height: auto;
+    margin: 20px 0; /* Space above and below the image */
+    display: block; /* Ensure images are block level for margin to work */
+}
+
+.biography-page .bio-image.full-span {
+    column-span: all; /* Images can span all columns */
+}
+.biography-page main {
+    /* ... [Other styles] ... */
+    padding-bottom: 120px; /* Adjust this value as needed to provide space above the footer */
+}
+/* Other styles remain the same as previously defined */
+
+
+
+@media (max-width: 600px) {
+    .artwork img {
+        width: 100%; /* Full width on smaller screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+
+@media only screen and (max-width: 576px) {
+    nav a {
+        padding: 10px 4px; /* Further reduce horizontal padding for small screens */
+        font-size: 14px; /* Optionally reduce font-size for small screens */
+    }
+
+    nav ul {
+        padding-left: 0; /* Ensure no padding is pushing the list items out */
+        padding-right: 0;
+    }
+
+    nav li {
+        margin-right: 4px; /* Reduce margin between list items if necessary */
+        margin-left: 4px;
+    }
+}
+
 
 
 @media (min-width: 768px) {
     .artwork {
-        flex-basis: calc(50% - 20px); /* On smaller screens, each item takes up half the container width */
+        flex-basis: calc(50% - 20px); /* 2 images per row */
     }
 
     .contact-box {
