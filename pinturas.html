@@ -39,7 +39,6 @@
 <body class="pinturas-page">
 
     <header>
-
     </header>
 
     <nav>
@@ -54,40 +53,28 @@
     <main class="gallery">
 		<!-- Add this section in your <main> before the gallery -->
 
-		<div class="filter-section">
-			<button id="filter-btn">Filter Paintings</button>
-			<div id="filter-menu" class="filter-menu" style="display:none;">
-				<h3>Filter by:</h3>
-				<div>
-					<label for="city-select">City:</label>
-					<select id="city-select">
-                <!-- Add options for cities here -->
-						<option value="all">All</option>
-                <!-- Example: <option value="Amsterdam">Amsterdam</option> -->
-					</select>
-				</div>
-				<div>
-					<label for="size-select">Size:</label>
-					<select id="size-select">
-                <!-- Add options for size here -->
-						<option value="all">All</option>
-                <!-- Example: <option value="small">Small</option> -->
-					</select>
-				</div>
-				<div>
-					<label for="price-range">Price:</label>
-					<input type="range" id="price-range" min="0" max="2000" />
-					<span id="price-value">$0 - $2000</span>
-				</div>
-				<button id="apply-filter">Apply</button>
-		</div>
-	</div>
+		
 	<div class="gallery-container">
 		
 		
 		
 		<!-- Added size detail --><!-- Added size detail --><!-- Added size detail --><!-- Added size detail --><!-- Added size detail -->
 		<!-- Added size detail --><!-- Added size detail --><!-- Added size detail --><!-- Added size detail --><!-- Added size detail -->
+		<div class="artwork">
+		<img src="paintings/CampbellsBayBeach.jpg" alt="Campbells Bay Beach">
+		<div class="info">
+			<h2>Campbells Bay Beach</h2>
+			<p class="description"></p>
+			<p class="medium">Acrylic on canvas</p>
+			<p class="size">Size: 30x61 cm</p>
+			<p class="location">Location: New Zealand</p>
+			<p class="price">€300</p>
+			<a href="purchase.html?image=paintings/CampbellsBayBeach.jpg&title=Campbells Bay Beach&description=Description&price=€300&size=30x61cm">
+				<button class="purchase-button">Purchase</button>
+			</a>
+		</div>
+		</div>
+
 		
 		<div class="artwork">
 		<img src="paintings/Orewa.jpg" alt="Orewa">
@@ -102,8 +89,9 @@
 				<button class="purchase-button">Purchase</button>
 			</a>
 		</div>
-		
-			<div class="artwork">
+		</div>
+			
+		<div class="artwork">
 		<img src="paintings/OrewaPohutukawa.jpg" alt="Orewa Pohutukawa">
 		<div class="info">
 			<h2>Orewa Pohutukawa</h2>
@@ -116,7 +104,8 @@
 				<button class="purchase-button">Purchase</button>
 			</a>
 		</div>
-		
+		</div>
+			
         <div class="artwork">
 			<img src="paintings/Leizdsegracht-Keizersgracht.jpg" alt="Leizdsegracht-Keizersgracht">
 			<div class="info">
@@ -143,6 +132,7 @@
 				<a href="purchase.html?image=paintings/Magere Brug.jpg&title=Magere Brug&=Description&price=€600&size=60x100cm">
                         <button class="purchase-button">Purchase</button>
                     </a>
+		</div>
 		</div>
 		<div class="artwork">
 			<img src="paintings/BigBen.jpg" alt="BigBen">

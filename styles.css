@@ -184,6 +184,8 @@ main.gallery {
     flex-basis: calc(33% - 20px); /* Each item takes up a third of the container width, minus margins */
     margin: 10px; /* Space around each item */
     box-sizing: border-box;
+	margin: 100px; /* Add margin around each artwork */
+
 }
 
 .artwork img {
@@ -512,6 +514,8 @@ main.gallery {
     margin: 10px; /* Space around each item */
     box-sizing: border-box;
 	color: white;
+	margin: 100px; /* Add margin around each artwork */
+
 }
 
 .artwork img {
@@ -908,6 +912,8 @@ main.gallery {
     flex-basis: calc(33% - 20px); /* Each item takes up a third of the container width, minus margins */
     margin: 10px; /* Space around each item */
     box-sizing: border-box;
+	margin: 100px; /* Add margin around each artwork */
+
 }
 
 .artwork img {
@@ -1230,6 +1236,8 @@ main.gallery {
     margin: 10px; /* Space around each item */
     box-sizing: border-box;
 	color: white;
+	margin: 100px; /* Add margin around each artwork */
+
 }
 
 .artwork img {
