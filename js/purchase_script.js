@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const imageUrl = urlParams.get('image');
     const title = urlParams.get('title');
+    const description = urlParams.get('description');
     const price = urlParams.get('price');
     const size = urlParams.get('size');
 
@@ -10,15 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
         paintingImage.src = decodeURIComponent(imageUrl);
         paintingImage.alt = decodeURIComponent(title || 'Painting');
 
-        // Update other elements like title, description, etc., as needed
-        // Example:
-        document.querySelector('.purchase-info .info').innerHTML = `
+        const infoElement = document.querySelector('.purchase-info .info');
+        infoElement.innerHTML = `
             <p>Title: ${decodeURIComponent(title)}</p>
+            <p>Description: ${decodeURIComponent(description)}</p>
             <p>Price: ${decodeURIComponent(price)}</p>
             <p>Size: ${decodeURIComponent(size)}</p>
         `;
     }
 
+    // Include the setupMagnifyingGlass function if you have it, or remove this line
     setupMagnifyingGlass(imageUrl);
 });
 

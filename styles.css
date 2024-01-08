@@ -187,8 +187,11 @@ main.gallery {
 }
 
 .artwork img {
-    width: 100%;
-    height: auto;
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+	max-height: 80vh; /* Limits the maximum height to 80% of the viewport height */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Ensures the image takes up the entire line */
+    margin: 0 auto; /* Centers the image in its container */
 }
 
 /* Add these new styles */
@@ -372,8 +375,20 @@ footer {
     z-index: 2;
     
 }
+.nofloatfooter {
+    background-color: #0056b3; /* Dark blue color */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0; /* Adjust padding as needed */
+    width: 100%;
+    box-shadow: 0px -4px 8px 0px rgba(0, 0, 0, 0.6); /* Optional: Adds a shadow for depth */
+}
 
-
+@media (min-width: 481px) {
+    .artwork {
+        flex-basis: 90%; /* Each item takes up the full container width on larger screens */
+    }
+}
 @media (max-width: 480px) {
     .artwork {
         flex-basis: 100%; /* On very small screens, each item takes up the full container width */
@@ -500,8 +515,14 @@ main.gallery {
 }
 
 .artwork img {
-    width: 100%;
-    height: auto;
+    .artwork img {
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+	max-height: 80vh; /* Limits the maximum height to 80% of the viewport height */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Ensures the image takes up the entire line */
+    margin: 0 auto; /* Centers the image in its container */
+}
+
 }
 
 /* Add these new styles */
@@ -724,7 +745,7 @@ footer {
 
 @media (min-width: 768px) {
     .artwork {
-        flex-basis: calc(50% - 20px); /* 2 images per row */
+        flex-basis: 90%; /* 2 images per row */
     }
 
     .contact-box {
@@ -890,8 +911,14 @@ main.gallery {
 }
 
 .artwork img {
-    width: 100%;
-    height: auto;
+    .artwork img {
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+	max-height: 80vh; /* Limits the maximum height to 80% of the viewport height */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Ensures the image takes up the entire line */
+    margin: 0 auto; /* Centers the image in its container */
+}
+
 }
 
 /* Add these new styles */
@@ -1206,8 +1233,14 @@ main.gallery {
 }
 
 .artwork img {
-    width: 100%;
-    height: auto;
+    .artwork img {
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+	max-height: 80vh; /* Limits the maximum height to 80% of the viewport height */
+    height: auto; /* Maintains the aspect ratio of the image */
+    display: block; /* Ensures the image takes up the entire line */
+    margin: 0 auto; /* Centers the image in its container */
+}
+
 }
 
 /* Add these new styles */
@@ -1432,7 +1465,7 @@ footer {
 
 @media (min-width: 768px) {
     .artwork {
-        flex-basis: calc(50% - 20px); /* 2 images per row */
+        flex-basis: 90%; /* 2 images per row */
     }
 
     .contact-box {

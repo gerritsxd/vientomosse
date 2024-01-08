@@ -114,7 +114,7 @@
 				<p class="size">Size: 60x100 cm</p> 
 				<p class="location">Location: Amsterdam The Netherlands.</p> <!-- New line added for location -->
 				<p class="price">€600</p><!-- Added size detail -->
-				<a href="purchase.html?image=paintings/Magere Brug.jpg&title=Magere Brug=Description&price=€600&size=60x100cm">
+				<a href="purchase.html?image=paintings/Magere Brug.jpg&title=Magere Brug&=Description&price=€600&size=60x100cm">
                         <button class="purchase-button">Purchase</button>
                     </a>
 		</div>
@@ -127,11 +127,39 @@
 				<p class="size">Size: 45x60 cm</p> 
 				<p class="location">Location: London England.</p> <!-- New line added for location -->
 				<p class="price">€600</p><!-- Added size detail -->
-				<a href="purchase.html?image=paintings/BigBen.jpg&title=BigBen=Description&price=€600&size=45x60cm">
+				<a href="purchase.html?image=paintings/BigBen.jpg&title=BigBen&description=Description&price=€600&size=45x60cm">
                         <button class="purchase-button">Purchase</button>
                     </a>
 			</div>
 		</div>
+			<div class="artwork">
+		<img src="paintings/Orewa.jpg" alt="Orewa">
+		<div class="info">
+			<h2>Orewa</h2>
+			<p class="description"></p>
+			<p class="medium">Acrylic on canvas</p>
+			<p class="size">Size: 30x61 cm</p>
+			<p class="location">Location: New Zealand</p>
+			<p class="price">€600</p>
+			<a href="purchase.html?image=paintings/Orewa.jpg&title=Orewa&description=Description&price=€600&size=30x61cm">
+				<button class="purchase-button">Purchase</button>
+			</a>
+		</div>
+		
+			<div class="artwork">
+		<img src="paintings/OrewaPohutukawa.jpg" alt="Orewa Pohutukawa">
+		<div class="info">
+			<h2>Orewa Pohutukawa</h2>
+			<p class="description"></p>
+			<p class="medium">Acrylic on canvas</p>
+			<p class="size">Size: 40.5x51 cm</p>
+			<p class="location">Location: New Zealand</p>
+			<p class="price">€600</p>
+			<a href="purchase.html?image=paintings/OrewaPohutukawa.jpg&title=Orewa Pohutukawa&description=Description&price=€600&size=40.5x51cm">
+				<button class="purchase-button">Purchase</button>
+			</a>
+		</div>
+
 		<div class="artwork">
 			<img src="paintings/Prinsengracht.jpg" alt="Magere Brug">
 			<div class="info">
@@ -141,7 +169,7 @@
 				<p class="size">Size: 80x140 cm</p> 
 				<p class="location">Location: Amsterdam The Netherlands.</p>
 				<p class="price">SOLD</p><!-- Added size detail -->
-				<a href="purchase.html?image=paintings/Prinsengracht.jpg&title=Prinsengracht=Description&price=€600&size=45x60cm">
+				<a href="purchase.html?image=paintings/Prinsengracht.jpg&title=Prinsengracht&description=Description&price=€600&size=45x60cm">
                         <button class="purchase-button">Purchase</button>
                     </a>
 			</div>
@@ -431,9 +459,9 @@
         });
     </script>
 	
-    <footer>
+    <nofloatfooter>
         <p>&copy; 2023 VientoMosse.com</p>
-    </footer>
+    </nofloatfooter>
 	<script src="js/script.js"></script>
 	<script src="js/purchase.js"></script>
 </body>
