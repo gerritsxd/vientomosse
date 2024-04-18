@@ -776,6 +776,35 @@ footer {
 
 
 }
+@media (max-width: 576px) {
+	nav {
+        padding: 0; /* Reduce padding */
+        font-size: 14px; /* Smaller font size for links */
+    }
+	body, html {
+        font-size: 14px; /* Smaller base font size */
+    }
+	header {
+        padding: 0.5em; /* Less padding */
+        text-align: center;
+    }
+    h2, .price {
+        font-size: 16px; /* Adjust heading and price font size */
+    }
+    .artwork {
+        margin: 10px; /* Smaller margins for small devices */
+        flex-basis: 100%; /* Full width */
+    }
+
+    nav ul, nav li, nav a {
+        padding: 5px; /* Reduced padding */
+        margin: 0; /* Reduced margin */
+    }
+
+    .main-content, .contact-box, .purchase-info, .info {
+        padding: 10px; /* Smaller paddings */
+    }
+}
 
 @media (max-width: 480px) {
     .artwork {
