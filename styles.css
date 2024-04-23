@@ -1529,6 +1529,21 @@ footer {
 
 
 }
+@media only screen and (max-width: 480px) {
+    body {
+        padding: 5px; /* Reduces body padding on very small screens */
+    }
+    .gallery-container {
+        padding: 5px; /* Less padding in the gallery container */
+    }
+    .artwork {
+        margin: 5px; /* Smaller margins for each artwork piece */
+    }
+    .info {
+        padding: 5px; /* Smaller padding inside each info block */
+    }
+}
+
 @media only screen and (max-width: 768px) {
     .gallery-container {
         padding: 10px; /* reduces padding on smaller screens */
