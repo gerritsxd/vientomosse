@@ -7,47 +7,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="purchase-body">
-	
-
     <nav>
         <ul>
-            <li><a href="VientoMosse.html" class="current">Home</a></li>
+            <li><a href="VientoMosse.html">Home</a></li>
             <li><a href="contacto.html">Contact</a></li>
             <li><a href="pinturas.html">Pinturas</a></li>
-			<li><a href="biografia.html" class="current">BIO</a></li>
-        </ul
+            <li><a href="biografia.html">BIO</a></li>
+        </ul>
     </nav>
 
     <main class="purchase-page">
-	<div class="purchase-background">
-        <div class="painting-container">
-            <img src="path_to_large_painting_image.jpg" alt="Large Painting" class="zoomable">
-        </div>
-        <div class="purchase-info">
-            <div class="info">
-                <p>Price: €800</p>
-                <p>Size: 140x100</p>
-                <p>Location: 52°21'59.8"N 4°53'03.2"E</p>
-                <!-- More info as needed -->
+        <div class="purchase-background">
+            <div class="painting-container">
+                <img src="path_to_large_painting_image.jpg" alt="Large Painting" class="zoomable">
             </div>
-            <div class="payment-options">
-                <p>Payment Options:</p>
-                <ul>
-                    <li>PayPal</li>
-                    <li>Credit/Debit Card</li>
-                    <!-- More options as needed -->
-                </ul>
+            <div class="purchase-info">
+                <h1>Painting Title</h1> <!-- Make sure to dynamically insert the painting title here -->
+                <p><strong>Price:</strong> €800</p>
+                <p><strong>Size:</strong> 140x100 cm</p>
+                <p><strong>Location:</strong> Amsterdam, NL</p> <!-- Simplified for readability -->
+                <div class="payment-options">
+                    <h2>Payment Options</h2>
+                    <ul>
+                        <li>PayPal</li>
+                        <li>Credit/Debit Card</li>
+                        <!-- More options can be added here -->
+                    </ul>
+                </div>
+            </div>
+            <div class="shipping-info">
+                <button id="shipping-info-btn">About the Shipping Process</button>
+                <p id="shipping-details" style="display: none;">
+                    Detailed information about the shipping process...
+                </p>
             </div>
         </div>
-        <div class="shipping-info">
-            <button id="shipping-info-btn">About the Shipping Process</button>
-            <p id="shipping-details" style="display: none;">
-                Detailed information about the shipping process...
-            </p>
-        </div>
-	</div>
     </main>
 
     <script src="js/purchase_script.js"></script>
+    <script>
+        document.getElementById('shipping-info-btn').addEventListener('click', function() {
+            var details = document.getElementById('shipping-details');
+            if (details.style.display === 'none') {
+                details.style.display = 'block';
+            } else {
+                details.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

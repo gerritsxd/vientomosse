@@ -1,4 +1,7 @@
 /* General styling for the website */
+body::before {
+    background: linear-gradient(135deg, #e6e9f0 10%, #eef1f5 100%);
+}
 
 body, html {
     margin: 0;
@@ -98,7 +101,7 @@ nav a {
     font-size: 16px; /* Adjust font-size if needed */
 }
 nav {
-    background-color: #007bff; /* Bright blue color */
+    background-color: #2a3d66; /* A deep blue that complements the skies and waters in the paintings */
     color: #fff;
     padding: 4px; /* Reduced padding */
     text-align: left;
@@ -137,7 +140,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #007bff;
+    background-color: #3466a8;
 }
 
 
@@ -175,7 +178,7 @@ iframe {
     box-sizing: border-box;
 }
 main.gallery {
-	margin-top: 80px; /* Adjust as needed */
+	margin-top: 40px; /* Adjust as needed */
     flex-grow: 1;
     padding-bottom: 120px; /* Adjust the value based on your design */
     margin-bottom: -120px; /* Negative margin to pull the footer up */
@@ -280,26 +283,9 @@ h2 {
 
 .contact-icon {
     font-size: 24px;
-    color: #007BFF;
+    color: #3466a8;
     cursor: pointer;
 }
-
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-body.purchase-body nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: auto; /* or a fixed height that matches the content */
-    z-index: 1000; /* to ensure it is on top */
-}
-
-
 
 .lens {
     position: absolute;
@@ -312,58 +298,7 @@ body.purchase-body nav {
     visibility: hidden;
 }
 
-.purchase-background {
-    background-color: black;
 
-}
-.painting-container {
-    position: relative;
-}
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.purchase-body {
-    background-color: #f0f0f0; /* Example color */
-}
-
-
-.info, .payment-options {
-    margin: 0 10px;
-}
-
-.shipping-info button {
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-.painting-container img.zoomable {
-    max-width: 100%;
-    max-height: 80vh; /* Limit the image height */
-    margin: 10px auto; /* Center the image */
-    transition: transform 0.25s ease;
-    cursor: zoom-in;
-}
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.info, .payment-options {
-    margin: 0 10px;
-}
 
 footer {
     background-color: #0056b3; /* Dark blue color */
@@ -415,8 +350,65 @@ body, html {
     font-family: Arial, sans-serif;
     height: 100%;
 }
+body.pinturas-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #e6e9f0 10%, #eef1f5 100%);
+    z-index: -1;
+}
 body.pinturas-page {
     padding-bottom: 120px; /* Add empty space at the bottom for the pinturas.html page */
+}
+
+.gallery-header {
+    text-align: center;
+    padding: 20px 0; /* Add more padding if you need more space */
+    background-color: #f5f5f7; /* Light grey background, can change to desired color */
+    color: #2a3d66; /* Deep blue text color, can change to desired color */
+    margin-top: 80px; /* Adjust this value based on the height of your nav bar */
+}
+
+.gallery-header h1 {
+    margin: 0; /* Removes default margin */
+    font-size: 3em; /* Adjust the size as needed */
+    font-weight: normal; /* Adjust font weight as needed */
+    line-height: 1.2; /* Adjust line height for better readability */
+    letter-spacing: 1px; /* Adds spacing between letters */
+}
+
+
+/* SEE button background color */
+.SEE-button {
+    background-color: #e67e22; /* Vibrant orange for action */
+    color: white; /* Ensures the text is readable */
+    border: none; /* Removes any default border */
+    padding: 10px 20px; /* Adds padding for a larger click area */
+    border-radius: 5px; /* Softens the corners of the button */
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+}
+
+/* Change text color on hover to increase contrast */
+.SEE-button:hover {
+    background-color: #cc6e1a; /* Slightly darker shade for hover state */
+}
+
+/* SOLD button background color */
+.SOLD-button {
+    background-color: #27ae60; /* Subdued green indicating the item is sold */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: default; /* Indicates the item is not clickable */
+}
+
+/* Prevent hover effect on SOLD button as it's not an actionable item */
+.SOLD-button:hover {
+    background-color: #27ae60; /* Keeps the same color on hover */
 }
 
 header {
@@ -428,7 +420,7 @@ header {
 }
 
 nav {
-    background-color: #007bff; /* Bright blue color */
+    background-color: #3466a8; /* Bright blue color */
     color: #fff;
     padding: 4px; /* Reduced padding */
     text-align: left;
@@ -504,7 +496,7 @@ iframe {
     box-sizing: border-box;
 }
 main.gallery {
-	margin-top: 80px; /* Adjust as needed */
+	margin-top: 40px; /* Adjust as needed */
     flex-grow: 1;
     padding-bottom: 120px; /* Adjust the value based on your design */
     margin-bottom: -120px; /* Negative margin to pull the footer up */
@@ -613,50 +605,10 @@ h2 {
 
 .contact-icon {
     font-size: 24px;
-    color: #007BFF;
+    color: #3466a8;
     cursor: pointer;
 }
 
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.info, .payment-options {
-    margin: 0 10px;
-}
-
-.shipping-info button {
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.info, .payment-options {
-    margin: 0 10px;
-}
 
 footer {
     background-color: #0056b3;
@@ -673,56 +625,28 @@ footer {
 
 }
 
-/* Specific styles for biography page 
-
 .biography-page {
-    background-color: #f0f0f0; /* Set a light background color for the biography page */
-    padding-top: 60px; /* Space for fixed navbar */
-    padding-bottom: 120px; /* Space for fixed footer */
+    background-color: #f5f5f5; /* Soft background color */
+    color: #333; /* Darker text for readability */
 }
 
 .biography-page main {
-    max-width: 800px; /* Maximum width of the content */
-    margin: 0 auto; /* Center the main content */
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the content */
     padding: 20px;
-    background: #fff; /* White background for the content */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
-}
-
-.biography-page .newspaper-style {
-    column-count: 2; /* Create two columns for the text */
-    column-gap: 40px; /* Space between the columns */
-    text-align: justify;
-	padding-bottom: 55px;
-}
-
-.biography-page .newspaper-style h1 {
-    column-span: all; /* Title spans all columns */
-    font-family: 'Times New Roman', serif; /* Serif font for a newspaper look */
-    font-size: 2.5rem;
-    margin-top: 0;
+    background: #fff; /* White background for content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+    padding-bottom: 40px; /* Space above the footer */
 }
 
 .biography-page .bio-image {
-    width: 100%;
-    max-width: 100%; /* Full column width */
-    height: auto;
-    margin: 20px 0; /* Space above and below the image */
-    display: block; /* Ensure images are block level for margin to work */
+    max-width: 100%; /* Responsive images */
+    margin: 20px 0;
 }
 
 .biography-page .bio-image.full-span {
-    column-span: all; /* Images can span all columns */
+    column-span: all;
 }
-.biography-page main {
-    /* ... [Other styles] ... */
-    padding-bottom: 120px; /* Adjust this value as needed to provide space above the footer */
-}
-/* Other styles remain the same as previously defined */
-
-
-
-
 
 @media only screen and (max-width: 576px) {
     nav a {
@@ -755,15 +679,22 @@ footer {
     .contact-box {
         width: 50%;
     }
-	.purchase-info {
-        flex-direction: column;
-	}
 	.biography-page .newspaper-style {
-        column-count: 1; /* Switch to a single column layout on smaller screens */
+        column-count: 2;
+        column-gap: 40px;
+        text-align: justify;
+    }
+	.biography-page .newspaper-style h1 {
+        column-span: all;
+        font-size: 2.5rem; /* Consider reducing for smaller screens */
     }
 	
 }
-
+@media (max-width: 767px) {
+    .biography-page .newspaper-style {
+        column-count: 1; /* Single column for small screens */
+    }
+}
 @media only screen and (max-width: 576px) {
     /* Smaller mobile devices */
     nav ul {
@@ -801,7 +732,7 @@ footer {
         margin: 0; /* Reduced margin */
     }
 
-    .main-content, .contact-box, .purchase-info, .info {
+    .main-content, .contact-box,.info {
         padding: 10px; /* Smaller paddings */
     }
 }
@@ -856,7 +787,7 @@ nav a {
     font-size: 16px; /* Adjust font-size if needed */
 }
 nav {
-    background-color: #007bff; /* Bright blue color */
+    background-color: #3466a8; /* Bright blue color */
     color: #fff;
     padding: 4px; /* Reduced padding */
     text-align: left;
@@ -895,7 +826,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #007bff;
+    background-color: #3466a8;
 }
 
 
@@ -932,7 +863,7 @@ iframe {
     box-sizing: border-box;
 }
 main.gallery {
-	margin-top: 80px; /* Adjust as needed */
+	margin-top: 40px; /* Adjust as needed */
     flex-grow: 1;
     padding-bottom: 120px; /* Adjust the value based on your design */
     margin-bottom: -120px; /* Negative margin to pull the footer up */
@@ -1040,91 +971,8 @@ h2 {
 
 .contact-icon {
     font-size: 24px;
-    color: #007BFF;
+    color: #3466a8;
     cursor: pointer;
-}
-
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-body.purchase-body nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: auto; /* or a fixed height that matches the content */
-    z-index: 1000; /* to ensure it is on top */
-}
-
-
-
-.lens {
-    position: absolute;
-    border: 3px solid #000;
-    border-radius: 50%;
-    cursor: none;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    visibility: hidden;
-    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.5);
-}
-
-
-.purchase-background {
-    background-color: white;
-
-}
-.painting-container {
-    position: relative;
-}
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.purchase-body {
-    background-color: #red; /* Example color */
-}
-
-
-.info, .payment-options {
-    margin: 0 10px;
-}
-
-.shipping-info button {
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-.painting-container img.zoomable {
-    max-width: 100%;
-    max-height: 80vh; /* Limit the image height */
-    margin: 10px auto; /* Center the image */
-    transition: transform 0.25s ease;
-    cursor: zoom-in;
-}
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.info, .payment-options {
-    margin: 0 10px;
 }
 
 footer {
@@ -1179,7 +1027,7 @@ header {
 }
 
 nav {
-    background-color: #007bff; /* Bright blue color */
+    background-color: #3466a8; /* Bright blue color */
     color: #fff;
     padding: 4px; /* Reduced padding */
     text-align: left;
@@ -1255,7 +1103,7 @@ iframe {
     box-sizing: border-box;
 }
 main.gallery {
-	margin-top: 80px; /* Adjust as needed */
+	margin-top: 40px; /* Adjust as needed */
     flex-grow: 1;
     padding-bottom: 120px; /* Adjust the value based on your design */
     margin-bottom: -120px; /* Negative margin to pull the footer up */
@@ -1364,49 +1212,8 @@ h2 {
 
 .contact-icon {
     font-size: 24px;
-    color: #007BFF;
+    color: #3466a8;
     cursor: pointer;
-}
-
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.info, .payment-options {
-    margin: 0 10px;
-}
-
-.shipping-info button {
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.purchase-page {
-    padding: 20px;
-    text-align: center;
-}
-
-
-
-.purchase-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.info, .payment-options {
-    margin: 0 10px;
 }
 
 footer {
@@ -1508,9 +1315,6 @@ footer {
     .contact-box {
         width: 50%;
     }
-	.purchase-info {
-        flex-direction: column;
-	}
 	.biography-page .newspaper-style {
         column-count: 1; /* Switch to a single column layout on smaller screens */
     }
@@ -1580,4 +1384,66 @@ footer {
         padding: 15px;
     }
 
+}
+
+/* Enhanced body styling with a subtle gradient background */
+.purchase-body {
+	padding-top: 80px; /* This value can be adjusted if your nav bar is larger or smaller */
+    font-family: 'Arial', sans-serif; /* Ensures a clean, readable font */
+    background: linear-gradient(to bottom right, #e6e9f0, #eef1f5); /* Subtle gradient background */
+    color: #333; /* Dark grey text for readability */
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Centering the main content and setting a maximum width */
+.purchase-page {
+    width: 100%;
+    max-width: 800px; /* Adjust based on your design preference */
+    margin: auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1); /* Adds subtle shadow for depth */
+    background-color: #f5f5f7; /* Maintains a clean white background for content */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Painting container adjustments for better visual alignment */
+.painting-container {
+    text-align: center;
+    margin-top: 40px; /* Adds space at the top to prevent overlap with the nav bar */
+    margin-bottom: 20px;
+}
+
+.painting-container img {
+    max-width: 100%; /* Responsive image sizing */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Button and interaction styling enhancements */
+#shipping-info-btn {
+    background-color: #3466a8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block; /* Makes the button block level for easier centering */
+    margin: 10px auto; /* Centers the button horizontally */
+}
+
+#shipping-info-btn:hover {
+    background-color: #0056b3;
+}
+
+.site-footer {
+    background-color: #2a3d66;  /* Deep blue, consistent with your navbar */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
 }
