@@ -1529,7 +1529,21 @@ footer {
 
 
 }
-
+@media only screen and (max-width: 768px) {
+    .gallery-container {
+        padding: 10px; /* reduces padding on smaller screens */
+    }
+    .artwork {
+        flex-direction: column; /* stacks image and text vertically */
+        align-items: center; /* centers the artwork */
+    }
+    .artwork img {
+        max-width: 90%; /* smaller max-width for mobile screens */
+    }
+    .info {
+        text-align: center; /* centers the text information on mobile */
+    }
+}
 @media (max-width: 480px) {
     .artwork {
         flex-basis: 100%; /* On very small screens, each item takes up the full container width */
